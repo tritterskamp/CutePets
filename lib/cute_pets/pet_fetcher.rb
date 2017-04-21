@@ -92,6 +92,8 @@ private
     'housetrained' => 'house trained',
     'noClaws'     => 'declawed',
     'altered'     => 'altered',
+    'sweet'     => 'sweet',
+    'adorable'     => 'adorable',
     'noDogs'      => nil,
     'noCats'      => nil,
     'noKids'      => nil,
