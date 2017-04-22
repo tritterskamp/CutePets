@@ -21,6 +21,10 @@ module TweetGenerator
     client.update_with_media(message, pet_pic_img)
   end
 
+  def adjective
+    ADJECTIVES.sample
+  end
+
   def create_message(pet_name, pet_description, pet_link)
     # full_description = %w(a e i o u).include?(pet_description[0]) ? "an #{pet_description}" : "a #{pet_description}"
     full_adjective = %w(a e i o u).include?(adjective[0]) ? "an #{adjective}" : "a #{adjective}"
@@ -29,10 +33,6 @@ module TweetGenerator
 
   def greeting
     MESSAGES.sample
-  end
-
-  def adjective
-    ADJECTIVES.sample
   end
 
   def client
