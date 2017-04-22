@@ -34,8 +34,7 @@ module PetFetcher
         pic:   get_photo(pet_json),
         link:  "https://www.petfinder.com/petdetail/#{pet_json['id']['$t']}",
         name:  pet_json['name']['$t'].capitalize,
-        description: [get_petfinder_option(pet_json['options']), get_petfinder_sex(pet_json['sex']['$t']), get_petfinder_breed(pet_json['breeds'])].compact.join(' ').downcase, pet_json['animal']['$t'].downcase
-        
+        description: [get_petfinder_option(pet_json['options']), get_petfinder_sex(pet_json['sex']['$t']),  get_petfinder_breed(pet_json['breeds'])].compact.join(' ').downcase
       }
     else
       raise 'PetFinder api request failed'
@@ -92,7 +91,7 @@ private
     'housebroken' => 'house trained',
     'housetrained' => 'house trained',
     'noClaws'     => 'declawed',
-    'altered'     => nil,
+    # 'altered'     => 'altered',
     'noDogs'      => nil,
     'noCats'      => nil,
     'noKids'      => nil,
