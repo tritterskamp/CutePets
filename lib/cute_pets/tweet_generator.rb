@@ -14,6 +14,7 @@ module TweetGenerator
   extend self
 
   MESSAGES = YAML.load(File.open('lib/greetings.yml'))
+  ADJECTIVES = YAML.load(File.open('lib/adjectives.yml'))
 
   def tweet(message, pet_pic_url)
     pet_pic_img = open(pet_pic_url)
@@ -21,12 +22,16 @@ module TweetGenerator
   end
 
   def create_message(pet_name, pet_description, pet_link)
-    full_description = %w(a e i o u).include?(pet_description[0]) ? "an #{pet_description}" : "a #{pet_description}"
-    "#{greeting} #{pet_name}. I am #{full_description}. #{pet_link}"
+    full_description = %w(a e i o u).include?(pet_description[0]) ? "an #{adjective}" : "a #{adjective}"
+    "#{greeting} #{pet_name}. I am #{adjective} #{full_description}. #{pet_link}"
   end
 
   def greeting
     MESSAGES.sample
+  end
+
+  def adjective
+    ADJECTIVES.sample
   end
 
   def client
