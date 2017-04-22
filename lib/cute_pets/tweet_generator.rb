@@ -23,6 +23,7 @@ module TweetGenerator
 
   def create_message(pet_name, pet_description, pet_link)
     # full_description = %w(a e i o u).include?(pet_description[0]) ? "an #{pet_description}" : "a #{pet_description}"
+    fun_adjective = ADJECTIVES.sample
     full_fun_adjective = %w(a e i o u).include?(fun_adjective[0]) ? "an #{fun_adjective}" : "a #{fun_adjective}"
     "#{greeting} #{pet_name}. I am #{full_fun_adjective} #{pet_description}. #{pet_link}"
   end
@@ -31,9 +32,9 @@ module TweetGenerator
     MESSAGES.sample
   end
 
-  def fun_adjective
-    ADJECTIVES.sample
-  end
+  # def fun_adjective
+  #   ADJECTIVES.sample
+  # end
 
   def client
     Twitter::REST::Client.new do |config|
