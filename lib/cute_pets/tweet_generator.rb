@@ -22,8 +22,9 @@ module TweetGenerator
   end
 
   def create_message(pet_name, pet_description, pet_link)
-    adjective = %w(a e i o u).include?(adjective[0]) ? "an #{adjective}" : "a #{adjective}"
-    "#{greeting} #{pet_name}. I am #{adjective} #{pet_description}. #{pet_link}"
+    # full_description = %w(a e i o u).include?(pet_description[0]) ? "an #{pet_description}" : "a #{pet_description}"
+    full_adjective = %w(a e i o u).include?(adjective[0]) ? "an #{adjective}" : "a #{adjective}"
+    "#{greeting} #{pet_name}. I am #{full_adjective} #{pet_description}. #{pet_link}"
   end
 
   def greeting
