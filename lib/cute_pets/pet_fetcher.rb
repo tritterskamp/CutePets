@@ -135,6 +135,6 @@ private
   end
 
   def get_shelter_id(id)
-    id.split(',').sample
+    id.split(',').map(&:strip).sample
   end
 end
